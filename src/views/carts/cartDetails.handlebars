@@ -1,0 +1,14 @@
+ <h1>Cart Details</h1>
+    <h2>Cart ID: {{cart._id}}</h2>
+    <ul>
+        {{#each cart.products}}
+            <li>
+                <h3>{{this.product.title}}</h3>
+                <p>Quantity: {{this.quantity}}</p>
+            </li>
+        {{/each}}
+    </ul>
+    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

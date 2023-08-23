@@ -1,0 +1,46 @@
+<h1>All Products</h1>
+  {{#if noProducts}}
+    <p>No hay productos disponibles</p>
+  {{else}}
+    <table id="productos" class="table">
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Code</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Stock</th>
+        <th>Category</th>
+      </tr>
+
+      {{#each products}}
+        <tr>
+          <td>{{this._id}}</td>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.status}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{this.category}}</td>
+        </tr>
+      {{/each}}
+    </table>
+    <form action="/products" method="POST" enctype="multipart/form-data">
+      <input type="file" name="thumbnails" multiple>
+      <input type="text" name="title" placeholder="Title">
+      <input type="text" name="description" placeholder="Description">
+      <input type="text" name="code" placeholder="Code">
+      <input type="number" name="price" placeholder="Price">
+      <input type="text" name="status" placeholder="Status">
+      <input type="number" name="stock" placeholder="Stock">
+      <input type="text" name="category" placeholder="Category">
+      <button type="submit">Agregar Producto</button>
+    </form>
+  {{/if}}
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

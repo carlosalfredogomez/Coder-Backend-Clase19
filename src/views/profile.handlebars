@@ -1,0 +1,13 @@
+ <div class="container">
+        <h1>Perfil de Usuario</h1>
+        <div class="user-info">
+            <p><strong>Nombre:</strong> {{ user.name }}</p>
+            <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
+            {{#if user.isAdmin}}
+                <p><strong>Rol:</strong> Administrador</p>
+            {{else}}
+                <p><strong>Rol:</strong> Usuario</p>
+            {{/if}}
+        </div>
+        <a href="/logout" class="logout-button">Cerrar Sesión</a>
+    </div>

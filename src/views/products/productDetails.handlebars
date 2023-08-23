@@ -1,0 +1,16 @@
+ <h1>Product Details</h1>
+    <h2>{{title}}</h2>
+    <p>Description: {{description}}</p>
+    <p>Price: {{price}}</p>
+    <p>Category: {{category}}</p>
+    <form action="/cart/{{cartId}}/add" method="post">
+        <input type="hidden" name="productId" value="{{_id}}">
+        <button type="submit">Add to Cart</button>
+    </form>
+    <form action="/auth/logout" method="GET">
+    <button type="submit">Cerrar Sesión</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

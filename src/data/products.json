@@ -1,0 +1,37 @@
+{
+  "productos_deportivos": [
+    {
+      "id": 1,
+      "title": "Pelota",
+      "description": "Balón de fútbol.",
+      "code": "FB-12345",
+      "price": 55.99,
+      "thumbnail": "url_del_thumbnail",
+      "status": true,
+      "stock": 15,
+      "category": "Fútbol"
+    },
+    {
+      "id": 2,
+      "title": "Raqueta",
+      "description": "Raqueta de tenis .",
+      "code": "TN-67890",
+      "price": 79.99,
+      "thumbnail": "url_del_thumbnail",
+      "status": true,
+      "stock": 20,
+      "category": "Tenis"
+    },
+    {
+      "id": 3,
+      "title": "Bicicleta",
+      "description": "Bicicleta de montaña.",
+      "code": "BC-54321",
+      "price": 2549.99,
+      "thumbnail": "url_del_thumbnail",
+      "status": true,
+      "stock": 25,
+      "category": "Ciclismo"
+    }
+  ]
+}

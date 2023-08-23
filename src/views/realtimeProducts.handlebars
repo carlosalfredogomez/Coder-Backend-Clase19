@@ -1,0 +1,80 @@
+<h1>All Products</h1>
+<section class="productsContainer">
+  <table id="productos" class="table">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Code</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>Stock</th>
+      <th>Category</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    {{#each products}}
+    <tr id="{{this._id}}">
+      <td>{{this._id}}</td>
+      <td><input type="text" value="{{this.title}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.description}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.code}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.price}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.status}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.stock}}" contenteditable="true" /></td>
+      <td><input type="text" value="{{this.category}}" contenteditable="true" /></td>
+      <td>
+        <button class="editButton" id="editButton_{{this._id}}" onclick="updateProduct('{{this._id}}')">Edit</button>
+      </td>
+      <td>
+        <button class="deleteButton" id="deleteButton_{{this._id}}"
+          onclick="deleteProduct('{{this._id}}')">Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</section>
+
+<form id="add-product-form" class="form">
+  <legend>Add Product</legend>
+
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required />
+
+  <label for="description">Description: </label>
+  <textarea id="description" name="description" required></textarea>
+
+  <label for="code">Code: </label>
+  <input type="text" id="code" name="code" required />
+
+  <label for="price">Price:</label>
+  <input type="text" id="price" name="price" pattern="\d+(\.\d{1,2})?" title="Ingrese un número válido" required />
+
+  <div class="status-container">
+    <p>Status:</p>
+
+    <div class="status-options">
+      <label for="status-true" class="status-option">True </label>
+      <input type="radio" id="status-true" name="status" value="true" checked />
+
+      <label for="status-false" class="status-option">False </label>
+      <input type="radio" id="status-false" name="status" value="false" />
+    </div>
+  </div>
+
+  <label for="stock">Stock:</label>
+  <input type="number" id="stock" name="stock" required />
+
+  <label for="category">Category:</label>
+  <input type="text" id="category" name="category" required />
+
+  <label for="thumbnails">Thumbnails:</label>
+  <input type="text" id="thumbnails" name="thumbnails" placeholder="Separar las URL de las imágenes por comas" />
+
+  <input type="submit" value="Add Product" />
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
